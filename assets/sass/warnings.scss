@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+.warningsGeral {
+    height: calc(100vh - 150px);
+    margin-top: 25px;
+    font-size: 14px;
+    a {
+        text-decoration: none;
+        color: #000;
+        cursor: default;
+    }
+
+    #warningsContrato {
+        font-family: 'Titillium Web', sans-serif;
+        height: calc(100vh - 150px);
+        overflow: auto;
+        .warnBoxContratos {
+            width: 90%;
+            // height: 60px;
+            background-color: #e0a4a4;
+            margin-left: 5%;
+            border: 2px solid red;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            // line-height: 60px;
+            padding-left: 10px;
+
+        }
+        .warnBoxContratosWeek {
+            width: 90%;
+            // height: 60px;
+            background-color: #e0dca4;
+            margin-left: 5%;
+            border: 2px solid yellow;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            // line-height: 60px;
+            padding-left: 10px;
+        }
+        .warnBoxContratosMonth {
+            width: 90%;
+            // height: 60px;
+            background-color: #a4e0dd;
+            margin-left: 5%;
+            border: 2px solid lightskyblue;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            // line-height: 60px;
+            padding-left: 10px;
+        }
+        .contTitle {
+            width: 90%;
+            height: 30px;
+            background-color: #4C7993;
+            color: #FFF;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-left: 5%;
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+    }
+    #warningsLicitacao {
+        font-family: 'Titillium Web', sans-serif;
+        border-right: 1px solid lightgray;
+        border-left: 1px solid lightgray;
+        height: calc(100vh - 150px);
+        overflow: auto;
+        .warnBoxLicitacao {
+            width: 90%;
+            background-color: #84b2f7;
+            margin-left: 5%;
+            border: 2px solid blue;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            padding-left: 10px;
+        }
+        .warnBoxLicitacaoWeek {
+            width: 90%;
+            background-color: #f7dc84;
+            margin-left: 5%;
+            border: 2px solid yellow;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            padding-left: 10px;
+        }
+
+    }
+    #warningsDocumentos {
+        font-family: 'Titillium Web', sans-serif;
+        height: calc(100vh - 150px);
+        overflow: auto;
+        .docTitle {
+            width: 90%;
+            height: 30px;
+            background-color: #4C7993;
+            color: #FFF;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-left: 5%;
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .warnBoxDocumentos {
+            width: 90%;
+            // height: 60px;
+            background-color: #b2f0b7;
+            margin-left: 5%;
+            border: 2px solid green;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            // line-height: 60px;
+            overflow: hidden;
+            text-align: left;
+            padding-left: 10px;
+        }
+        .warnBoxDocumentosOutDated {
+            width: 90%;
+            // height: 60px;
+            background-color: #f0b2b2;
+            margin-left: 5%;
+            border: 2px solid red;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            // line-height: 60px;
+            overflow: hidden;
+            text-align: left;
+            padding-left: 10px;
+        }
+    }
+}

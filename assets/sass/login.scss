@@ -1,0 +1,119 @@
+//IMPORT FONTS
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+//COLOR VARIABLES
+$default-color: #7FCAF5;
+$text-color: #4C7993;
+$select-border: #808B92;
+$btn-bckg: #c3e6f8;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loginArea {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(45deg, #212121, #4C7993);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .loginSection {
+        width: 400px;
+        height: 600px;
+        background-color: #212121;
+        border-top: 2px solid #4C7993;
+        box-shadow: 1px 1px 1px 10px rgba(#000, .3);
+        .title {
+            width: 100%;
+            height: 100px;
+            margin-top: 150px;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            padding-left: 30px;
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 18px;
+            color: #CCC;
+        }
+        .formArea {
+            width: 100%;
+            height: 100px;
+            background-color: #282828;
+            // border-top: 1px solid #353535;
+            // border-bottom: 1px solid #353535;
+            .inputArea {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                flex-direction: row;
+                border-top: 1px solid #353535;
+                border-bottom: 1px solid #353535;
+                .logIcon {
+                    width: 15%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .inputForm {
+                    width: 85%;
+                    height: 100%;
+                    background-color: #282828;
+                    border: none;
+                    outline: none;
+                    color: #CCC;
+                }
+            }
+        }
+        .buttonArea {
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .loginButton {
+                width: 170px;
+                height: 45px;
+                border-radius: 30px;
+                background-color: #212121;
+                border: 2px solid #4C7993;
+                font-family: 'Titillium Web', sans-serif;
+                font-size: 18px;
+                color: #4C7993;
+                cursor: pointer;
+                &:hover {
+                    background-color: #4C7993;
+                    color: #FFF;
+                    transition: 0.2s ease;
+                    border: 2px solid #203c4d;
+                    
+                }
+            }
+            .forgetPassword {
+                font-size: 12px;
+                font-family: 'Titillium Web', sans-serif;
+                color: #353535;
+                margin-left: 20px;
+                text-decoration: underline;
+            }
+        }
+        .disclaimer {
+            width: 100%;
+            height: 30px;
+            margin-top: 95px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+                font-family: 'Titillium Web', sans-serif;
+                font-size: 12px;
+                color: #404040;
+            }
+        }
+    }
+}

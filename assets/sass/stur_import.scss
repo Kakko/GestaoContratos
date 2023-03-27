@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    th {
+        height: 30px;
+        padding-left: 10px;
+        background-color: #AAA;
+        border: 1px solid #212121;
+    }
+    td {
+        height: 40px;
+        padding-left: 10px;
+        background-color: lightgray;
+        border: 1px solid #AAA;
+        font-size: 12px;
+
+        button {
+            margin-left: 5px;
+        }
+    }
+}

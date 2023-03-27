@@ -1,0 +1,981 @@
+//IMPORT FONTS
+@font-face {
+    font-family: Sora;
+    src: url(../fonts/Sora-Regular.ttf);
+}
+@font-face {
+    font-family: Sora-Bold;
+    src: url(../fonts/Sora-Bold.ttf);
+}
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+//IMPORT FONTS
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #EEE;
+    #maskLoading {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        text-shadow: 1px 1px 1px #CCC;
+        font-family: 'Titillium Web', sans-serif;
+        z-index: 999;
+    }
+}
+.login_area {
+    width: 20%;
+    height: 400px;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    position: absolute;
+    left: 50%;
+    margin-left: -10%;
+    margin-top: 200px;
+    box-shadow: 0 0 10px gray;
+    h4 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+}
+//FINAL LOGIN
+
+//INICIO TEMPLATE
+.topo {
+    width: 100%;
+    height: 60px;
+    background-color: #203c4a;
+    .brand {
+        width: 30%;
+        height: 100%;
+        color: #FFF !important;
+        float:left;
+        line-height: 60px;
+        font-family: 'Titillium Web', sans-serif;
+        h4 {
+            margin-top: 15px;
+            margin-left: 5%;
+        }
+    }
+    .nightButton {
+        width: 5%;
+        height: 100%;
+        float: right;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            cursor: pointer;
+            width: 20%;
+        }
+    }
+    .user_info {
+        width: 65%;
+        height: 100%;
+        line-height: 60px;
+        color: #FFF;
+        float:left;
+        a{
+            margin-right: 5%;
+            color: #FFF;
+            text-decoration: none;
+            float: right;
+        }
+        .dropdown-menu {
+            background-color: #203c4a;
+            .dropdown-item {
+                position: block !important;
+                margin: 0 !important;
+                color: #FFF !important;
+                &:hover {
+                    background-color: #4C7993 !important;
+                }
+            }
+        }
+    }
+}
+// .avisos_diarios {
+//     position: absolute;
+//     top: 5%;
+//     right: 1%;
+//     z-index: 999;
+//     #aviso_licitacao {
+//         width: 600px;
+//         right: 1%;
+//         top: 5%;
+//         z-index: 999;
+//         background-color: #d4edda;
+//         border: 1px solid #155724;
+//         color: #000;
+//         line-height: 50px;
+//         padding-left: 10px;
+//         border-radius: 5px;
+//         text-shadow: 0 0 1px #fff;
+//         margin-bottom: 5px;
+//         button {
+//             background-color: rgba($color: #000000, $alpha: 0.0);
+//             color: #000;
+//             text-decoration: underline;
+//             width: 50px;
+//             border: none;
+//             float: right;
+//             text-shadow: 0 0 1px #fff;
+//             margin-right: 10px;
+//             &:hover {
+//                 color: coral;
+//             }
+//         }
+//     }
+// }
+// .avisos_adiados {
+//     position: absolute;
+//     top: 50%;
+//     right: 1%;
+//     z-index: 999;
+//     #adiados_licitacao {
+//         width: 600px;
+//         background-color: #FFF3CE;
+//         border: 1px solid #856404;
+//         color: #000;
+//         line-height: 50px;
+//         padding-left: 10px;
+//         border-radius: 5px;
+//         text-shadow: 0 0 5px #fff;
+//         button {
+//             background-color: rgba($color: #000000, $alpha: 0.0);
+//             color: #000;
+//             width: 50px;
+//             border: none;
+//             float: right;
+//             text-shadow: 0 0 5px #fff;
+//             margin-right: 10px;
+//             &:hover {
+//                 color: coral;
+//             }
+//         }
+//     }
+// }
+// .avisos_inicio {
+//     position: absolute;
+//     top: 90%;
+//     right: 1%;
+//     z-index: 999;
+    
+//     #inicio_licitacao {
+//         width: 600px;
+//         background-color: #f8d7da;
+//         border: 1px solid #721c24;
+//         color: #000;
+//         line-height: 50px;
+//         padding-left: 10px;
+//         border-radius: 5px;
+//         text-shadow: 0 0 5px #fff;
+//         button {
+//             background-color: rgba($color: #000000, $alpha: 0.0);
+//             color: #000;
+//             width: 50px;
+//             border: none;
+//             float: right;
+//             text-shadow: 0 0 5px #fff;
+//             margin-right: 10px;
+//             &:hover {
+//                 color: coral;
+//             }
+//         }
+//     }
+// }
+
+
+.menu {
+    width: 15%;
+    height: calc(100vh - 60px);
+    background-image: url(../images/contract_bg.jpg);
+    background-size: cover;
+    background-position-x: -800px;
+    position: absolute;
+    margin-left: -13%;
+    transition: 0.5s;
+    z-index: 999;
+    &:hover{
+        margin-left: 0%;
+        transition: 0.5s;
+    }
+    .menu_bg {
+        width: 100%;
+        height: 100%;
+        background-color: #203c4de6;
+        ul {
+            color: #FFF;
+            list-style: none;
+            padding-top: 50px;
+            .sections {
+                li {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 15%;
+                    background-repeat: no-repeat;
+                    background-size: 20px 20px;
+                    background-position-x: 96%;
+                    background-position-y: 10px;
+                    cursor: pointer;
+                    &:hover {
+                        color:  #2fa1e2;
+                    }
+                    a {
+                        color: #FFF;
+                        text-decoration: none;
+                        display: block;
+                        &:hover {
+                            transition: 0.2s;
+                            color:  #2fa1e2;
+                        }
+                    }
+                    &:hover {
+                        background-color: rgba(0, 0, 0,0.3);
+                        transition: 0.2s;
+                    }
+                    &:nth-child(1){
+                        background-image: url(../images/icons/home.png);
+                    }
+                    &:nth-child(2){
+                        background-image: url(../images/icons/auction.png);
+                    }
+                    &:nth-child(3){
+                        background-image: url(../images/icons/contract.png);
+                    }
+                    &:nth-child(4){
+                        background-image: url(../images/icons/documents.png);
+                    }
+                    &:nth-child(5){
+                        background-image: url(../images/icons/calendar.png);
+                    }
+                    &:nth-child(6){
+                        background-image: url(../images/icons/register.png);
+                    }
+                    &:nth-child(7){
+                        background-image: url(../images/icons/report1.png);
+                    }
+                    &:nth-child(8){
+                        background-image: url(../images/icons/report.png);
+                    }
+                }
+            }
+            #reports {
+                width: 100%;
+                overflow: hidden;
+                transition: 0.5s ease;
+                li {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 15%;
+                    background-repeat: no-repeat;
+                    background-size: 20px 20px;
+                    background-position-x: 96%;
+                    background-position-y: 10px;
+                    &:hover {
+                        color:  #2fa1e2;
+                    }
+                    a {
+                        color: #FFF;
+                        text-decoration: none;
+                        display: block;
+                        &:hover {
+                            transition: 0.2s;
+                            color:  #2fa1e2;
+                        }
+                    }
+                    &:hover {
+                        background-color: rgba(0, 0, 0,0.3);
+                        transition: 0.2s;
+                    }
+                }
+            }
+        }
+    }
+}
+.view_area {
+    width: 100%;
+    height: calc(100vh - 60px);
+    padding-left: 2%;
+    background-color: #EEE;
+}
+//INICIO CADASTROS
+.section_top {
+    width: 100%;
+    height: 50px;
+    background: #FFF;
+    line-height: 50px;
+    font-size: 28px;
+    padding-left: 20px;
+    text-shadow: 1px 1px 1px lightgray;
+    box-shadow: 0 4px 2px -2px gray;
+    margin-bottom: -10px;
+    .sectionTitle {
+        width: 95%;
+        height: 50px;
+        background: #FFF;
+        line-height: 50px;
+        font-size: 28px;
+        text-shadow: 1px 1px 1px lightgray;
+        box-shadow: 0 4px 2px -2px gray;
+        margin-bottom: -10px;
+        float: left;
+    }
+    .sectionAction {
+        width: 5%;
+        height: 50px;
+        float: left;
+        img {
+            height: 90%;
+            float: right;
+            margin-right: 30px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+    }
+
+}
+.cards {
+    width: 350px;
+    height: 155px;
+    box-shadow: 0 0 2px gray;
+    float: left;
+    background-color: #FFF;
+    margin-left: 15px;
+    margin-top: 55px;
+    .card_title {
+        width: 100%;
+        height: 30px;
+        margin-top: 2px;
+        background-color: rgb(131, 131, 131);
+        h4 {
+            line-height: 30px;
+            color: #fff;
+            text-align: center;
+            text-shadow: 1px 1px 1px rgb(0, 48, 12);
+        }
+    }
+    .card_body {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        background-position-y: -5px;
+        a {
+            text-decoration: none;
+            margin-left: -15px;
+            color: #000;
+            &:hover {
+                color: coral;
+                transition: 0.2s;
+            }
+        }
+        span {
+            font-size: 100px;
+            font-family: 'Arial';
+            margin-left: 10%;
+        }
+        p {
+            margin-top: -58px;
+            margin-left: 65%;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 1px solid #fff;
+        }
+        button {
+            margin-top: -25px;
+            width: 100%;
+            border-radius: 0 !important;
+
+        }
+    }
+    .companies {
+        background-image: url(../images/icons/company_bg.png);
+    }
+    .system {
+        background-image: url(../images/icons/system.png);
+    }
+    .sectors {
+        background-image: url(../images/icons/sector.png);
+    }
+    .produtos {
+        background-image: url(../images/icons/objects.png);
+    }
+    .clientes {
+        background-image: url(../images/icons/clients.png);
+    }
+    .auction_actual {
+        background-image: url(../images/icons/auction_bg.png);
+    }
+    .auction_ok {
+        background-image: url(../images/icons/auction_ok.png);
+    }
+    .auction_cancelled {
+        background-image: url(../images/icons/auction_canceled.png);
+    }
+}
+
+//Área do Usuário
+
+.user_area {
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 0 10px gray;
+    margin-top: 50px;
+    padding: 20px;
+    input[type=submit] {
+        margin-top: 20px;
+        float: right;
+    }
+}
+
+.exib_dados {
+    border: none;
+    border-right: 1px solid #17A2B8;
+    border-bottom: 1px solid #17A2B8;
+    outline: none;
+    background: transparent;
+    width: 100%;
+}
+
+//Licitações
+.selectButton {
+    width: 100%;
+    height: 30px;
+    background-color: #4C7993;
+    border: none;
+    border-radius: 8px;
+    color: #FFF;
+    img {
+        padding-left: 10px;
+    }
+}
+.multipleSelectCompanies {
+    width: 150%;
+    height: 0px;
+    box-shadow: 0 0 10px #000;
+    background-color: lightgray;
+    border-radius: 10px;
+    position: absolute;
+    transition: .5s;
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 12px;
+    margin-top: 10px;
+    .companyItem {
+        width: 100%;
+        height: 30px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        background-color: #FFF;
+        padding-left: 10px;
+        line-height: 30px;
+        cursor: pointer;
+        overflow: auto;
+    }
+    .selected {
+        background: linear-gradient(45deg, #4C7993, #FFF);
+        color: #FFF;
+    }
+}
+.multipleSelectStatus {
+    width: 150%;
+    height: 0px;
+    box-shadow: 0 0 2px lightskyblue;
+    background-color: lightgray;
+    border-radius: 10px;
+    position: absolute;
+    transition: .5s;
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 12px;
+    margin-top: 10px;
+    .statusItem {
+        width: 100%;
+        height: 30px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        background-color: #FFF;
+        padding-left: 10px;
+        line-height: 30px;
+        cursor: pointer;
+    }
+    .selected {
+        background: linear-gradient(45deg, #4C7993, #FFF);
+        color: #FFF;
+    }
+}
+.multipleSelectType {
+    width: 150%;
+    height: 0px;
+    box-shadow: 0 0 2px lightskyblue;
+    background-color: lightgray;
+    border-radius: 10px;
+    position: absolute;
+    transition: .5s;
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 12px;
+    margin-top: 10px;
+    .typeItem {
+        width: 100%;
+        height: 30px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        background-color: #FFF;
+        padding-left: 10px;
+        line-height: 30px;
+        cursor: pointer;
+    }
+    .selected {
+        background: linear-gradient(45deg, #4C7993, #FFF);
+        color: #FFF;
+    }
+}
+.multipleSelectSystems {
+    width: 150%;
+    height: 0px;
+    box-shadow: 0 0 2px lightskyblue;
+    background-color: lightgray;
+    border-radius: 10px;
+    position: absolute;
+    transition: .5s;
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 12px;
+    z-index: 10;
+    margin-top: 10px;
+    .systemItem {
+        width: 100%;
+        height: 30px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        background-color: #FFF;
+        padding-left: 10px;
+        line-height: 30px;
+        cursor: pointer;
+    }
+    .selected {
+        background: linear-gradient(45deg, #4C7993, #FFF);
+        color: #FFF;
+    }
+}
+.dateSearch {
+    width: 90%;
+    height: 0px;
+    background-color: #FFF;
+    border-radius: 10px;
+    position: absolute;
+    transition: .5s;
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    .dateInput {
+        width: 70%;
+        height: 30px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 8px;
+        color: gray;
+        box-shadow: 0 0 5px lightgray;
+        margin-left: 50px;
+    }
+}
+.valueSearch {
+    width: 90%;
+    height: 0px;
+    background-color: #FFF;
+    border-radius: 10px;
+    position: absolute;
+    transition: .5s;
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    .valueInput {
+        width: 70%;
+        height: 30px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 8px;
+        color: gray;
+        box-shadow: 0 0 5px lightgray;
+        margin-left: 50px;
+    }
+}
+.sturSearch {
+    width: 90%;
+    height: 0px;
+    border-radius: 10px;
+    position: absolute;
+    transition: .5s;
+    overflow: hidden;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    outline: none;
+    .sturCodInput {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 8px;
+        color: gray;
+        box-shadow: 0 0 5px lightgray;
+        outline: none;
+    }
+}
+.statusSearch {
+    width: 90%;
+    height: 0px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: lightgray;
+    box-shadow: 0 0 10px #000;
+    transition: .5s;
+    overflow: hidden;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    outline: none;
+    .statusItem {
+        width: 100%;
+        height: 30px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        background-color: #FFF;
+        padding-left: 10px;
+        line-height: 30px;
+        cursor: pointer;
+        overflow: auto;
+    }
+    .selected {
+        background: linear-gradient(45deg, #4C7993, #FFF);
+        color: #FFF;
+    }
+}
+.selectInadimplente {
+    width: 90%;
+    height: 0px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: lightgray;
+    box-shadow: 0 0 10px #000;
+    transition: .5s;
+    overflow: hidden;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    outline: none;
+    .inadItem {
+        width: 100%;
+        height: 30px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        background-color: #FFF;
+        padding-left: 10px;
+        line-height: 30px;
+        cursor: pointer;
+        overflow: auto;
+    }
+    .selected {
+        background: linear-gradient(45deg, #4C7993, #FFF);
+        color: #FFF;
+    }
+}
+
+.selectClientName {
+    width: 150%;
+    height: 0px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: lightgray;
+    box-shadow: 0 0 10px #000;
+    transition: .5s;
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    outline: none;
+    z-index: 10;
+    #showClientArea {
+        .clientItem {
+            width: 100%;
+            height: 30px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            background-color: #FFF;
+            padding-left: 10px;
+            line-height: 30px;
+            cursor: pointer;
+            overflow: auto;
+            font-size: 12px;
+        }
+        .selected {
+            background: linear-gradient(45deg, #4C7993, #FFF);
+            color: #FFF;
+        }
+    }
+}
+.contractDateSearch {
+    width: 100%;
+    height: 0px;
+    background-color: #FFF;
+    box-shadow: 0 0 10px #000;
+    border-radius: 10px;
+    position: absolute;
+    transition: .5s;
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    .dateInput {
+        width: 70%;
+        height: 30px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 8px;
+        color: gray;
+        box-shadow: 0 0 5px lightgray;
+        margin-left: 50px;
+    }
+    .dateAditivo {
+        margin-left: 20px;
+    }
+}
+.multipleSelectCompaniesExpired {
+    width: 25%;
+    height: 0px;
+    box-shadow: 0 0 10px #000;
+    background-color: lightgray;
+    border-radius: 10px;
+    position: absolute;
+    transition: .5s;
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 12px;
+    margin-top: 10px;
+    .companyItemExpired {
+        width: 100%;
+        height: 30px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        background-color: #FFF;
+        padding-left: 10px;
+        line-height: 30px;
+        cursor: pointer;
+        overflow: auto;
+    }
+    .selected {
+        background: linear-gradient(45deg, #4C7993, #FFF);
+        color: #FFF;
+    }
+}
+//Set companies into users permissions
+.showCompanies {
+    width: 100%;
+    max-height: 200px;
+    box-shadow: 0 0 5px gray;
+    margin-bottom: 20px;
+    overflow: auto;
+    .companyButton {
+        width: 30%;
+        height: 30px;
+        background-color: #4C7993;
+        border: none;
+        border-radius: 8px;
+        color: #FFF;
+        float: left;
+        margin-left: 18px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        .companyInfo {
+            width: 90%;
+            height: 100%;
+            line-height: 30px;
+            padding-left: 10px;
+            float: left;
+            overflow: hidden;
+        }
+        .removeCompany {
+            width: 10%;
+            height: 100%;
+            float: left;
+            border-radius: 8px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+    }
+}
+.companyTitle {
+    width: 100%;
+    height: 30px;
+}
+.setCompaniesShow {
+    width: 100%;
+    height: 200px;
+    box-shadow: 0 0 5px gray;
+    overflow: auto;
+    background-color: #EEE;
+    .companyItem {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 3px;
+        font-size: 12px;
+        background-color: #FFF;
+        line-height: 30px;
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    .selected {
+        background: linear-gradient(45deg, #4C7993, #FFF);
+        color: #FFF;
+    }
+}
+#permissionParams {
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    
+    .params_list{
+        width: 20%;
+        height: 30px;
+        border: 1px solid #CCC;
+        border-radius: 5px;
+        font-size: 14px;
+        font-family: 'Titillium Web', sans-serif;
+        padding-left: 10px;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+    .selected {
+        // background: linear-gradient(45deg, #4C7993, #FFF);
+        background-color: #4C7993;
+        color: #FFF;
+    }
+}
+.popup_area {
+    height: calc(100vh - 200px);
+    position: absolute;
+    right: 50px;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    .popup {
+        width: 500px;
+        height: 80px;
+        background-color: #e99099;
+        box-shadow: 0 0 10px #721c24;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        z-index: 999;
+        margin-bottom: 10px;
+        .highlight {
+            width: 2%;
+            height: 100%;
+            background-color: #8f1010;
+            border-radius: 5px 0 0 5px;
+        }
+        .popup_info {
+            width: 90%;
+            height: 100%;
+            border-right: 1px solid #8f1010;
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-family: ''Titillium Web', sans-serif';
+            color: #000;
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 20px;
+        }
+        .popup_action{
+            width: 8%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+    }
+}
+.companySelectionArea {
+    width: 100%;
+    max-height: 300px;
+    overflow: auto;
+    margin-bottom: 5px;
+    .companiesItem {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 2px;
+        border: 1px solid #CCC;
+        border-radius: 2px;
+        padding-left: 10px;
+        font-size: 14px;
+        line-height: 30px;
+        font-family: 'Sora';
+        cursor: pointer;
+        
+        &:hover {
+            background: linear-gradient(90deg, #4C7993, #FFF);
+        }
+    }
+    .selected {
+        background: linear-gradient(90deg, #4C7993, #FFF);
+    }
+}
+
+.setPermissionsArea {
+    width: 100%;
+    height: 200px;
+    margin-top: 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #CCC;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    .permButton {
+        width: 23%;
+        height: 30px;
+        background-color: #EEE;
+        border: 1px solid #CCC;
+        border-radius: 2px;
+        outline: none;
+        &:hover {
+            background-color: #4C7993;
+        }
+    }
+    .perm_selected {
+        background-color: #4C7993;
+    }
+}
+
+
+
+
+
+
+
+

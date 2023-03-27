@@ -1,0 +1,16 @@
+.tabitem {
+    float: left;
+    width: 50%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    line-height: 40px;
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+.activetab {
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+.tabbody{
+    display: none;
+}

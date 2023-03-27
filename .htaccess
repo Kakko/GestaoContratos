@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+RewriteRule ^uploads/.*.(php|php5)$ - [F,L,NC]
+
+# Bloqueia todos os arquivos PHP, com exceção do index.
+<Files *.php>
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+</Files>
+
+<Files index.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
